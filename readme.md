@@ -1,4 +1,4 @@
-# MongoDB Products and Manufacturers
+# Recipe App Node / MongoDB
 
 This is an API for Creating, Reading, Updating, and Deleting
 'Products / Mainufacturers' using Node and Express and MongoDB.
