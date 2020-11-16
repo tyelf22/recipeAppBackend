@@ -24,8 +24,14 @@ con.on('open', () => {
 app.use(express.json())
 
 
+//recipes
 const recipeRouter = require('./routes/recipeRoute')
 app.use('/recipes', recipeRouter)
+
+//shopping
+const shoppingRouter = require('./routes/shoppingRoute')
+app.use('/shopping', shoppingRouter)
+
 
 
 app.listen(PORT, () => {

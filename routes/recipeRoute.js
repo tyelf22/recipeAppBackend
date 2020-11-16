@@ -60,19 +60,23 @@ router.put('/:id', async(req, res) => {
 router.patch('/:id', async(req, res) => {
     try{
         const recipe = await Recipe.findById(req.params.id)
-        console.log('in patch')
 
         if(req.body.name){
             recipe.name = req.body.name
-        }else if(req.body.description){
+        }
+        if(req.body.description){
             recipe.description = req.body.description
-        }else if(req.body.category){
+        }
+        if(req.body.category){
             recipe.category = req.body.category
-        }else if(req.body.rating){
+        }
+        if(req.body.rating){
             recipe.rating = req.body.rating
-        }else if(req.body.ingredients){
+        }
+        if(req.body.ingredients){
             recipe.ingredients = req.body.ingredients
-        }else if(req.body.directions){
+        }
+        if(req.body.directions){
             recipe.directions = req.body.directions
         }
        
