@@ -64,7 +64,7 @@ router.patch('/:id', async(req, res) => {
         if(req.body.quantity){
             shopping.quantity = req.body.quantity
         }
-        if(req.body.complete){
+        if(req.body.complete == true || req.body.complete == false){
             shopping.complete = req.body.complete
         }
        
