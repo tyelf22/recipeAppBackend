@@ -1,7 +1,7 @@
 # Recipe App Node / MongoDB
 
 This is an API for Creating, Reading, Updating, and Deleting
-'Products / Mainufacturers' using Node and Express and MongoDB.
+Recipes using Node and Express and MongoDB.
 
 
 ## Install
@@ -13,63 +13,111 @@ This is an API for Creating, Reading, Updating, and Deleting
     npm start
 
 
-# Products Endpoints
+The Backend endpoints are described below 
+👇
 
-The Endpoints for CRUD is described below.
-
-## Return all products
+## Return all Recipes
 
 ### Request
-    GET /products
+    GET /recipes
 
 #### Response
 
 ```json
 [
     {
-        "name": "Milk",
-        "category": "food",
-        "price": 4.99,
-        "quantity": 30
+        "ingredients": [
+            "eggs",
+            "salt",
+            "pepper",
+            "onions",
+            "peppers",
+            "tomatoes"
+        ],
+        "directions": [
+            "Mix in Bowl",
+            "preheat stove",
+            "flip",
+            "fold"
+        ],
+        "_id": "5fa463f044a3bc2fa80f6baa",
+        "name": "Omlette",
+        "description": "Fluffy yellow delicious omlettes",
+        "category": "breakfast",
+        "rating": 2
     },
 
     {
-        "name": "Jacket",
-        "category": "shopping",
-        "price": 15.50,
-        "quantity": 23
+        "ingredients": [
+            "eggs",
+            "salt",
+            "pepper"
+        ],
+        "directions": [
+            "Mix in Bowl",
+            "preheat stove",
+            "flip"
+        ],
+        "_id": "5fa4641744a3bc2fa80f6bab",
+        "name": "Pancakes",
+        "description": "Fluffy pancakes",
+        "category": "breakfast",
+        "rating": 3
     }
 ]
 ```
 
-## Return specific Product
+## Return specific recipe
 
 ### Request
-    GET /products/:id
+    GET /recipes/:id
 
 #### Response
 
 ```json
 {
-    "id": "4312b117-2a4d-4059-b341-70b0ada893bb",
-    "name": "jacket",
-    "category": "clothing",
-    "price": 15.50,
-    "quantity": 23
+    
+    "ingredients": [
+        "eggs",
+        "salt",
+        "pepper"
+    ],
+    "directions": [
+        "Mix in Bowl",
+        "preheat stove",
+        "flip"
+    ],
+    "_id": "5fa4641744a3bc2fa80f6bab",
+    "name": "Pancakes",
+    "description": "Fluffy pancakes",
+    "category": "breakfast",
+    "rating": 3
+
 }
 ```
 
-## Create new product
+## Create new recipe
 
 ### Request
-    Post /products
+    Post /recipes
 
 ```json
 {
-    "name": "tv",
-    "category": "electronics",
-    "price": 31.30,
-    "quantity": 50
+    "ingredients": [
+        "eggs",
+        "salt",
+        "pepper"
+    ],
+    "directions": [
+        "Mix in Bowl",
+        "preheat stove",
+        "flip"
+    ],
+    "_id": "5fa4641744a3bc2fa80f6bab",
+    "name": "Pancakes",
+    "description": "Fluffy pancakes",
+    "category": "breakfast",
+    "rating": 3
 }
 ```
     
@@ -77,22 +125,46 @@ The Endpoints for CRUD is described below.
 
 ```json
 {
-    "name":"tv",
-    "category":"electronics",
-    "price": 31.30,
-    "quantity": 50
+    "ingredients": [
+        "eggs",
+        "salt",
+        "pepper"
+    ],
+    "directions": [
+        "Mix in Bowl",
+        "preheat stove",
+        "flip"
+    ],
+    "_id": "5fa4641744a3bc2fa80f6bab",
+    "name": "Pancakes",
+    "description": "Fluffy pancakes",
+    "category": "breakfast",
+    "rating": 3
 }
 ```
 
-## Update Products
+## Update Recipe
 
 ### Request
-    Patch /products/:id
+    Put /recipes/:id
 
 ```json
 {
-    "name": "television",
-    "price": 35.99
+    "ingredients": [
+        "eggs",
+        "salt",
+        "salt"
+    ],
+    "directions": [
+        "Mix in Bowl",
+        "preheat stove",
+        "flip"
+    ],
+    "_id": "5fa4641744a3bc2fa80f6bab",
+    "name": "Pancakes",
+    "description": "Fluffy pancakes",
+    "category": "breakfast",
+    "rating": 3
 }
 ```
     
@@ -100,76 +172,100 @@ The Endpoints for CRUD is described below.
 
 ```json
 {
-    "name": "television",
-    "category": "electronics",
-    "price": 35.99,
-    "quantity": 30
+    "ingredients": [
+        "eggs",
+        "salt",
+        "salt"
+    ],
+    "directions": [
+        "Mix in Bowl",
+        "preheat stove",
+        "flip"
+    ],
+    "_id": "5fa4641744a3bc2fa80f6bab",
+    "name": "Pancakes",
+    "description": "Fluffy pancakes",
+    "category": "breakfast",
+    "rating": 3
 }
 ```
 
-## Delete Products
+## Delete Recipe
 
 ### Request
-    Delete /products/:id
+    Delete /recipes/:id
 
     
 #### Response
 
-[Item that was deleted]
+[Recipe was deleted]
 
-
-# Manufacturers Endpoints
-
-
-## Return all manufacturers
+## Return all Shopping Items
 
 ### Request
-    GET /manufacturer
+    GET /shopping
 
 #### Response
 
 ```json
-[
     {
-        "name": "walmart",
-        "address": "cirle lane orem",
-        "phone": "555-755-8555",
-    },
-
-    {
-        "name": "target",
-        "address": "happy ave",
-        "phone": "555-755-3232",
+        "_id": "5fb2f1a6dbba4241e04dd7cf",
+        "name": "apples",
+        "quantity": 6,
+        "complete": false,
     }
-]
 ```
 
-## Return specific Manufacturer
+## Return specific shopping item
 
 ### Request
-    GET /manufacturer/:id
+    GET /shopping/:id
 
 #### Response
 
 ```json
-{
-    "id": "4312b117-2a4d-4059-b341-70b0ada893bb",
-    "name": "target",
-    "address": "happy ave",
-    "phone": "555-755-3232",
-}
+    {
+        "_id": "5fb2f1a6dbba4241e04dd7cf",
+        "name": "apples",
+        "quantity": 6,
+        "complete": false,
+    }
 ```
 
-## Create new Manufacturer
+## Create new shopping item
 
 ### Request
-    Post /manufacturer
+    Post /shopping
 
 ```json
 {
-    "name": "target",
-    "address": "happy ave",
-    "phone": "555-755-3232",
+    "_id": "5fb2f1a6dbba4241e04dd7cr",
+    "name": "oranges",
+    "quantity": 2,
+    "complete": false,
+}
+
+```
+    
+#### Response
+
+```json
+{
+    "_id": "5fb2f1a6dbba4241e04dd7cr",
+    "name": "oranges",
+    "quantity": 2,
+    "complete": false,
+}
+```
+
+## Update shopping item
+
+### Request
+    Patch /shopping/:id
+
+```json
+{
+    "quantity": 4,
 }
 ```
     
@@ -177,40 +273,19 @@ The Endpoints for CRUD is described below.
 
 ```json
 {
-    "name": "target",
-    "address": "happy ave",
-    "phone": "555-755-3232",
+    "_id": "5fb2f1a6dbba4241e04dd7cr",
+    "name": "oranges",
+    "quantity": 4,
+    "complete": false,
 }
 ```
 
-## Update Manufacturers
+## Delete shopping item
 
 ### Request
-    Patch /manufacturer/:id
-
-```json
-{
-    "name": "Maceys",
-    "phone": "801-555-2020"
-}
-```
-    
-#### Response
-
-```json
-{
-    "name": "Maceys",
-    "address": "happy ave",
-    "phone": "801-555-2020",
-}
-```
-
-## Delete Manufacturers
-
-### Request
-    Delete /manufacturer/:id
+    Delete /shopping/:id
 
     
 #### Response
 
-[Item that was deleted]
+[shopping item was deleted]
